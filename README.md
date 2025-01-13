@@ -2,15 +2,22 @@
 
 This project is a quickstart for using Cloudflare Workers with Hono and Next.js.
 
-It was inspired by the core building blocks reused across [gm.dev](https://gm.dev) and [Chasing Harbor](https://chasingharbor.com).
-
 The quickstart includes some defaults for:
 
-- A monorepo setup with pnpm workspaces
-- Basic Next.js setup with [Tailwind CSS](https://tailwindcss.com/)
-- A simple API via [Hono](https://hono.dev)
+- A monorepo architecture using pnpm workspaces and [Turborepo](https://turbo.build/repo/docs) for efficient build orchestration
+- Basic Next.js 15 App Router setup with [Tailwind CSS](https://tailwindcss.com/)
+- Client-side data fetching and caching via [TanStack Query](https://tanstack.com/query/latest)
+- Simple and type-safe API endpoints with [Hono](https://hono.dev) and [Prisma](https://www.prisma.io/)
+- Distributed SQL database with [TiDB](https://pingcap.co.jp/) for cloud-native applications
 - Deployments to Cloudflare via [GitHub Actions](.github/workflows)
 - Formatting and linting via [Biome](https://biomejs.dev/)
+
+A monorepo setup with pnpm workspaces and Turborepo for efficient build orchestration
+Next.js 14 App Router setup with Tailwind CSS for modern React development
+A simple API via Hono with Prisma integration for type-safe database operations
+TanStack Query (React Query) integration for efficient server state management
+Deployments to Cloudflare via GitHub Actions
+Formatting and linting via Biome
 
 ## Getting Started
 
