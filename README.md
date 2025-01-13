@@ -12,19 +12,12 @@ The quickstart includes some defaults for:
 - Deployments to Cloudflare via [GitHub Actions](.github/workflows)
 - Formatting and linting via [Biome](https://biomejs.dev/)
 
-A monorepo setup with pnpm workspaces and Turborepo for efficient build orchestration
-Next.js 14 App Router setup with Tailwind CSS for modern React development
-A simple API via Hono with Prisma integration for type-safe database operations
-TanStack Query (React Query) integration for efficient server state management
-Deployments to Cloudflare via GitHub Actions
-Formatting and linting via Biome
-
 ## Getting Started
 
 1. Clone this repository
 
 ```bash
-  git clone git@github.com:gmdotdev/cloudflare-quickstart.git
+  git clone git@github.com:nxsdev/hono-prisma-next-workers-starter.git
 ```
 
 2. Install dependencies
