@@ -1,5 +1,8 @@
 # Cloudflare Quickstart
 
+> [!WARNING]
+> This project is currently under development and not available for use.
+
 This project is a quickstart for using Cloudflare Workers with Hono and Next.js.
 
 The quickstart includes some defaults for:
