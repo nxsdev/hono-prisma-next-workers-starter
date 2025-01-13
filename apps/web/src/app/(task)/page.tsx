@@ -10,7 +10,7 @@ import { TasksContainer } from './task-container';
 export default async function Page() {
   const queryClient = getQueryClient();
 
-  queryClient.prefetchQuery({
+  await queryClient.prefetchQuery({
     queryKey: ['tasks'] as const,
     queryFn: () => client.tasks.$get().then((res) => res.json()),
   });

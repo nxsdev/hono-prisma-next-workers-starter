@@ -1,12 +1,12 @@
 'use client';
 
 import { client } from '@/lib/client';
-import { useSuspenseQuery } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { TaskItem } from './task-item';
 import type { Task } from './types';
 
 export function TaskList() {
-  const { data: tasks } = useSuspenseQuery<Task[]>({
+  const { data: tasks } = useQuery<Task[]>({
     queryKey: ['tasks'] as const,
     queryFn: () => client.tasks.$get().then((res) => res.json()),
   });
@@ -14,7 +14,7 @@ export function TaskList() {
   return (
     <div className="mt-6">
       <div className="space-y-4">
-        {tasks.length > 0 ? (
+        {tasks && tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskItem
               key={task.id}

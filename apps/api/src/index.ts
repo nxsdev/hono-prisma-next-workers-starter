@@ -8,16 +8,17 @@ const app = createApp();
 configureOpenAPI(app);
 
 app.use(
-  '/api/v1/*',
+  '*',
   cors({
-    origin: 'https://todos-web.nxsland.workers.dev',
+    origin: ['https://todos-web.nxsland.workers.dev', 'http://localhost:8771'],
     allowMethods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowHeaders: ['Content-Type', 'Authorization'],
+    allowHeaders: ['Content-Type', 'Authorization', 'X-Custom-Header', 'Upgrade-Insecure-Requests'],
+    credentials: true,
   }),
 );
 
 // app.basePath('api/v1').route('/', tasks); basePathを使うとOASが出力されないので直書き
-const routes = app.route('api/v1/', tasks);
+const routes = app.route('/', tasks);
 
 export type AppType = typeof routes;
 

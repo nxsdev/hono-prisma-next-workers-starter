@@ -1,6 +1,6 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "todos-api"
-main = "src/index.ts"
+main = "dist/index.js"
 
 compatibility_date = "2024-12-30"
 compatibility_flags = ["nodejs_compat"]
@@ -20,3 +20,6 @@ NODE_ENV = "production"
 API_URL = "https://todos-api.nxsland.workers.dev"
 LOG_LEVEL = "info"
 PRISMA_CLIENT_FORCE_WASM = "1"
+
+[settings]
+workers_dev = true

@@ -7,7 +7,7 @@
     "dev": "wrangler dev src/index.ts --compatibility-flags='nodejs_compat'",
     "dev:worker": "wrangler dev src/index.ts --compatibility-flags='nodejs_compat' --port 8787",
     "build": "tsc",
-    "build:worker": "wrangler publish --dry-run src/index.ts",
+    "build:worker": "pnpm build && wrangler publish --dry-run dist/index.js",
     "preview:worker": "pnpm build:worker && pnpm dev:worker",
     "deploy:worker": "pnpm build:worker && wrangler deploy src/index.ts",
     "lint": "cd ../.. && biome lint apps/api",

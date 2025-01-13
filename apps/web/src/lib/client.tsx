@@ -1,4 +1,4 @@
-import type { AppType } from '@repo/api';
+import type { AppType } from '@repo/api/dist/index';
 import { hc } from 'hono/client';
 import { APIError } from '../../lib/error';
 
@@ -13,7 +13,6 @@ export const createClient = (...args: Parameters<typeof hc>): Client => {
       try {
         const response = await fetch(input, {
           ...requestInit,
-          cache: 'no-store', // Next.js 14でのfetchのキャッシュを無効化
         });
 
         if (!response.ok) {
@@ -53,4 +52,4 @@ if (!process.env.NEXT_PUBLIC_API_URL) {
   throw new Error('NEXT_PUBLIC_API_URL is not defined');
 }
 
-export const client = createClient('https://todos-api.nxsland.workers.dev').api.v1;
+export const client = createClient('https://todos-api.nxsland.workers.dev');
