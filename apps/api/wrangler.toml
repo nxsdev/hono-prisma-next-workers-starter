@@ -1,0 +1,22 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "todos-api"
+main = "src/index.ts"
+
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+upload_source_maps = true
+
+# How to setup a custom domain
+# routes = [{ pattern = "api.example.com", custom_domain = true }]
+
+[observability]
+enabled = true
+
+[dev]
+port = 8787
+
+[vars]
+NODE_ENV = "production"
+API_URL = "https://todos-api.nxsland.workers.dev"
+LOG_LEVEL = "info"
+PRISMA_CLIENT_FORCE_WASM = "1"

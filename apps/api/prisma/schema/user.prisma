@@ -1,0 +1,34 @@
+model User {
+  id           String         @id @default(cuid(2))
+  username     String         @unique
+  email        String?
+  avatarUrl    String?        @map("avatar_url")
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
+  deletedAt    DateTime?      @map("deleted_at")
+  sessions     Session[]
+  oauthAccount OauthAccount[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid(2))
+  userId    String   @map("user_id")
+  expiresAt DateTime @map("expires_at")
+  fresh     Boolean  @default(true)
+  user      User     @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model OauthAccount {
+  id             String @id @default(cuid(2))
+  provider       String
+  providerUserId String @map("provider_user_id")
+  userId         String @map("user_id")
+  user           User   @relation(references: [id], fields: [userId], onDelete: Cascade)
+
+  @@unique([provider, providerUserId])
+  @@map("oauth_accounts")
+}

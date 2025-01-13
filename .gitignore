@@ -1,0 +1,44 @@
+# dependencies
+**/node_modules
+
+# build outputs
+**/dist
+**/.next
+**/.output
+**/.vercel
+**/.build
+**/.open-next
+
+# dev environments
+**/.wrangler
+**/.dev.vars
+
+# misc
+**/.DS_Store
+**/.env
+**/.env*.local
+**/.env.production
+**/.turbo
+**/env.d.ts
+
+# cache
+**/.cache
+**/.eslintcache
+
+# generated files
+**/__generated__/
+**/*.generated.*
+**/*.react-email
+**/*.contentlayer
+
+# logs
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# IDE
+**/.idea
+# **/.vscode
+**/*.swp
+**/*.swo

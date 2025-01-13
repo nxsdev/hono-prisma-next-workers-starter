@@ -1,0 +1,29 @@
+{
+  "name": "hono-prisma-next-workers-starter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "sh ./fix-dirname.sh",
+    "dev": "turbo dev",
+    "dev:worker": "turbo dev:worker",
+    "build:worker": "turbo build:worker",
+    "preview:worker": "turbo preview:worker",
+    "deploy:worker": "turbo deploy:worker",
+    "lint": "turbo lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "turbo": "^2.3.3",
+    "wrangler": "^3.101.0"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "packageManager": "pnpm@9.15.2",
+  "volta": {
+    "node": "22.12.0",
+    "pnpm": "9.15.2"
+  }
+}

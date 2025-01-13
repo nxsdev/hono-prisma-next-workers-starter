@@ -1,0 +1,8 @@
+NODE_ENV="development"
+API_URL="http://localhost:8787"
+LOG_LEVEL="debug"
+SENTRY_DSN=
+DATABASE_URL="see https://docs.pingcap.com/ja/tidb/stable/dev-guide-sample-application-nodejs-prisma"
+PRISMA_CLIENT_FORCE_WASM=1
+GITHUB_CLIENT_ID="your-client-id"
+GITHUB_CLIENT_SECRET="your-client-secret"

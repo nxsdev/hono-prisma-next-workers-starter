@@ -1,0 +1,19 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "todos-web"
+main = ".open-next/worker.js"
+
+compatibility_date = "2024-12-30"
+compatibility_flags = ["nodejs_compat"]
+upload_source_maps = false
+
+# Assets used for files and cache priming.
+assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+[observability]
+enabled = true
+
+[vars]
+NODE_ENV = "production"
+NEXT_PUBLIC_API_URL = "https://todos-api.nxsland.workers.dev"
+NEXT_PUBLIC_APP_URL = "https://todos-web.nxsland.workers.dev"
+LOG_LEVEL = "info"

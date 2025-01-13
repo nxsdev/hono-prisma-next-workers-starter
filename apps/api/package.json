@@ -1,0 +1,53 @@
+{
+  "name": "@repo/api",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts --compatibility-flags='nodejs_compat'",
+    "dev:worker": "wrangler dev src/index.ts --compatibility-flags='nodejs_compat' --port 8787",
+    "build": "tsc",
+    "build:worker": "wrangler publish --dry-run src/index.ts",
+    "preview:worker": "pnpm build:worker && pnpm dev:worker",
+    "deploy:worker": "pnpm build:worker && wrangler deploy src/index.ts",
+    "lint": "cd ../.. && biome lint apps/api",
+    "build-cf-types": "wrangler types --env-interface CloudflareEnv env.d.ts",
+    "env": "dotenv -e .dev.vars",
+    "prisma:generate": "pnpm run env -- prisma generate",
+    "prisma:migrate": "pnpm run env -- prisma migrate dev",
+    "prisma:deploy": "pnpm run env -- prisma migrate deploy",
+    "prisma:studio": "pnpm run env -- prisma studio",
+    "prisma:format": "prisma format",
+    "db:push": "pnpm run env -- prisma db push",
+    "db:seed": "pnpm run env -- prisma db seed"
+  },
+  "dependencies": {
+    "@hono/zod-openapi": "^0.18.3",
+    "@hono/zod-validator": "^0.4.2",
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0",
+    "@prisma/client": "^6.2.1",
+    "@prisma/extension-accelerate": "^1.2.1",
+    "@prisma/extension-pulse": "^1.2.0",
+    "@scalar/hono-api-reference": "^0.5.165",
+    "@tidbcloud/prisma-adapter": "^5.20.0",
+    "@tidbcloud/serverless": "^0.2.0",
+    "arctic": "^2.3.3",
+    "hono": "^4.6.16",
+    "prisma-extension-soft-delete": "^2.0.0",
+    "stoker": "^1.4.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.40",
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "@quramy/prisma-fabbrica": "^2.2.2",
+    "dotenv-cli": "^8.0.0",
+    "prisma": "^6.2.1",
+    "prismock": "^1.35.1",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^2.1.8"
+  }
+}
