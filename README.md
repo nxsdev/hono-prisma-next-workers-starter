@@ -29,23 +29,44 @@ The quickstart includes some defaults for:
   pnpm install
 ```
 
-3. Start the development server(s)
+3. Initialize the project
 
 ```bash
-  cd apps/api && pnpm dev
-  cd apps/web && pnpm dev
+  make init
+```
+
+4. Configure the database connection
+
+Set up your TiDB database URL in apps/api/.dev.vars:
+
+```bash
+DATABASE_URL="mysql://user:password@host:4000/database_name"
+```
+
+Get started with [TiDB Cloud](https://tidbcloud.com/free-trial/) by signing up for a free tier account.
+
+For instructions on how to get the Prisma connection URL, please refer to the [TiDB Cloud documentation](https://docs.pingcap.com/ja/tidbcloud/dev-guide-sample-application-nodejs-prisma#step-3-provide-connection-parameters).
+
+Run database migrations
+
+```bash
+cd apps/api
+pnpm prisma:migrate
+```
+
+5. Start the development server(s)
+
+in root directory:
+
+```bash
+pnpm dev
 ```
 
 That's it! You should now have the API and web server running locally.
 
 ## Deploying to Cloudflare
 
-1. Create a new GitHub repository for your project.
-
-2. Set up the following GitHub repository secrets:
-
-- [`CLOUDFLARE_ACCOUNT_ID`](https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/)
-- [`CLOUDFLARE_API_TOKEN`](https://developers.cloudflare.com/workers/wrangler/ci-cd/#api-token)
+ここより下は準備中
 
 3. Create the Cloudflare Pages app with a project name matching that in [build-and-deploy--web.yml](.github/workflows/build-and-deploy--web.yml). You can create a new Pages app by:
 
