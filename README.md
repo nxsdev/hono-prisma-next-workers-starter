@@ -65,7 +65,7 @@ pnpm dev:worker
 That's it! You should now have the API and web server running locally.
 
 > [!NOTE]
-> pnpm dev:worker launches Next.js on Miniflare, but pnpm dev launches it on Node.js. Use pnpm dev if you prioritize your development experience.
+> `pnpm dev:worker` runs Next.js on Miniflare, which is closer to the production environment, while `pnpm dev` runs it on Node.js. Use `pnpm dev` if you prioritize your development experience.
 
 ## Deploying to Cloudflare
 
