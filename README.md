@@ -20,19 +20,19 @@ The quickstart includes some defaults for:
 1. Clone this repository
 
 ```bash
-  git clone git@github.com:nxsdev/hono-prisma-next-workers-starter.git
+git clone git@github.com:nxsdev/hono-prisma-next-workers-starter.git
 ```
 
 2. Install dependencies
 
 ```bash
-  pnpm install
+pnpm install
 ```
 
 3. Initialize the project
 
 ```bash
-  make init
+make init
 ```
 
 4. Configure the database connection
@@ -59,7 +59,7 @@ pnpm prisma:migrate
 in root directory:
 
 ```bash
-dev:worker
+pnpm dev:worker
 ```
 
 That's it! You should now have the API and web server running locally.
